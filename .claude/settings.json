@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx *)",
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git checkout *)",
+      "Bash(git branch *)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(git status)",
+      "Bash(git pull *)",
+      "Bash(gh pr *)",
+      "Bash(mkdir *)",
+      "Bash(ls *)",
+      "Bash(open index.html)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(git push --force *)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean -f*)"
+    ]
+  },
+  "enabledPlugins": {
+    "add": true
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "cat > /dev/null; [ -f .add/config.json ] && printf '/\\033[38;2;124;92;191mADD\\033[0m:enabled'"
+  }
+}

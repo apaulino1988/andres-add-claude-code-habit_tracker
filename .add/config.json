@@ -1,0 +1,162 @@
+{
+  "$schema": "https://github.com/MountainUnicorn/add/config.schema.json",
+  "version": "0.5.0",
+  "project": {
+    "name": "Andres Paulino Daily Habit Tracker",
+    "description": "A browser-based daily habit tracker. Users add habits, check them off daily, and track streaks. Runs entirely in the browser using localStorage — no server, no accounts, no install required.",
+    "created": "2026-04-09",
+    "author": "Andres Paulino"
+  },
+  "maturity": {
+    "level": "poc",
+    "promoted_from": null,
+    "promoted_date": null,
+    "next_promotion_criteria": "M1 shipped with working MVP (add/list/check-off/streak), deployed to GitHub Pages with a public URL, and at least basic tests in place."
+  },
+  "architecture": {
+    "languages": [
+      {
+        "name": "HTML5",
+        "version": "5",
+        "role": "frontend"
+      },
+      {
+        "name": "CSS3",
+        "version": "3",
+        "role": "frontend"
+      },
+      {
+        "name": "JavaScript",
+        "version": "ES2022",
+        "role": "frontend"
+      }
+    ],
+    "backend": {
+      "framework": null,
+      "version": null,
+      "runtime": null
+    },
+    "frontend": {
+      "framework": "Vanilla JavaScript",
+      "version": "ES2022",
+      "bundler": "none"
+    },
+    "database": {
+      "type": "localStorage",
+      "version": "Browser API"
+    },
+    "containerized": false,
+    "container_strategy": "none",
+    "suggested_by_claude": false
+  },
+  "infrastructure": {
+    "git_host": "github",
+    "git_remote": null,
+    "cloud_provider": "github-pages",
+    "cloud_services": ["GitHub Pages"],
+    "cicd": {
+      "platform": "github-actions",
+      "scaffolded_by_add": true,
+      "pipeline_file": ".github/workflows/deploy.yml"
+    },
+    "infrastructure_as_code": "none"
+  },
+  "environments": {
+    "tier": 2,
+    "local": {
+      "run": "open index.html",
+      "test": "npx jest",
+      "e2e": "npx playwright test",
+      "url": "file:///index.html"
+    },
+    "dev": {
+      "deploy_trigger": null,
+      "url": null,
+      "verify": ["unit_tests"]
+    },
+    "staging": {
+      "deploy_trigger": null,
+      "url": null,
+      "verify": []
+    },
+    "production": {
+      "deploy_trigger": "push to main",
+      "verify": ["smoke_tests"],
+      "url": "TBD — set after GitHub repo is created (yourname.github.io/habit-tracker)",
+      "requires_approval": false
+    }
+  },
+  "quality": {
+    "mode": "standard",
+    "coverage_threshold": 80,
+    "type_check_blocking": false,
+    "e2e_required": true,
+    "screenshot_protocol": true,
+    "lint": {
+      "backend": null,
+      "frontend": "npx eslint ."
+    },
+    "typecheck": {
+      "backend": null,
+      "frontend": null
+    },
+    "test": {
+      "unit": "npx jest",
+      "integration": "npx jest --testPathPattern=integration",
+      "e2e": "npx playwright test"
+    }
+  },
+  "collaboration": {
+    "autonomy_level": "balanced",
+    "team_size": "solo",
+    "commit_review_gate": false,
+    "pr_review_gate": true,
+    "deploy_approval_required": false
+  },
+  "source_control": {
+    "branching": "feature-branches",
+    "default_branch": "main",
+    "commit_convention": "conventional",
+    "pr_template": true,
+    "protected_branches": ["main"]
+  },
+  "branding": {
+    "accentColor": "#7C5CBF",
+    "presetName": "custom",
+    "palette": {
+      "accent": "#7C5CBF",
+      "accentLight": "#9B7DD4",
+      "accentDark": "#5D3FA0",
+      "accentMuted": "#A48ECA",
+      "accentGlow": "rgba(124,92,191,0.4)",
+      "gradientStart": "#60B4D8",
+      "gradientMid": "#7C5CBF",
+      "gradientEnd": "#D4AF37",
+      "success": "#22c55e",
+      "warning": "#D4AF37",
+      "info": "#60B4D8"
+    },
+    "fonts": null,
+    "tone": "Simple, professional",
+    "logoPath": null,
+    "styleGuideSource": null
+  },
+  "imageGeneration": {
+    "enabled": false,
+    "tool": null,
+    "plugin": null,
+    "nudged": false,
+    "lastDetected": null
+  },
+  "changelog": {
+    "lastProcessedCommit": null,
+    "lastVersionTag": null
+  },
+  "planning": {
+    "current_milestone": "M1-MVP",
+    "current_cycle": null,
+    "wip_limit": 1,
+    "parallel_agents": 1,
+    "cycle_history": []
+  }
+}
